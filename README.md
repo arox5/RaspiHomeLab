@@ -1,7 +1,8 @@
 # RaspiHomeLab
 A simple and easy web application for general purpose home automation. This is my personal lab.
 
-## Main targets:
+## Main targets
+1. Handle authentication
 1. Handle the features provided by DLink DCS-932L IP camera
    - show current picture
    - shot list of pictures created by motion detection
@@ -10,7 +11,7 @@ A simple and easy web application for general purpose home automation. This is m
 1. Handle themperature sensor (Oregon Scientific EW 93)
 1. Who knows...
 
-## System setup:
+## System setup
 - **Raspberry PI 3** with Raspbian Stretch. Installed software:
   - Web server: Apache with PHP and Curl
   - FTP server: Pure-FTPd
