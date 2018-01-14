@@ -16,11 +16,13 @@ A simple and easy web application for general purpose home automation. This is m
   - FTP server: Pure-FTPd
   - Home theater: Kodi
 - DLink DCS-932L
-  - Firmware downgraded to 1.12.02 (this is required in order to have full control of the camera via web requests)
+  - Firmware downgraded to 1.12.02 
+    - Remarks: this is required in order to have full control of the camera via web requests; with this firmware the control from the app is not available
   - Motion detection with upload via FTP to the Raspberry PI
 - Modem Fastgate (provided by italian ISP Fastweb)
   - Public IP address
-  - Port forwarding enabled to reach the Raspberry PI via port 443
+  - Port forwarding enabled to reach the Raspberry PI via port 443 (no other port forwarding)
+  - UPNP disabled
 - Website domain name registered for free at http://www.freenom.com/
 - HTTPS enabled for free with https://letsencrypt.org/
 - Windows 10 with Internet Explorer 11 configured in this way (otherwise it's not possible to reach the camera IP address):
