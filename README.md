@@ -16,8 +16,9 @@ A simple and easy web application for general purpose home automation. This is m
   - FTP server: Pure-FTPd
   - Home theater: Kodi
 - DLink DCS-932L
-  - Firmware downgraded to 1.12.02 
-    - Remarks: this is required in order to have full control of the camera via web requests; with this firmware the control from the app is not available
+  - Firmware downgraded to 1.12.02. Remarks: 
+    - This is required in order to have full control of the camera via web requests
+    - With this firmware the control from the app is not available
   - Motion detection with upload via FTP to the Raspberry PI
 - Modem Fastgate (provided by italian ISP Fastweb)
   - Public IP address
