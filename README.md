@@ -1,5 +1,5 @@
 # RaspiHomeLab
-A simple and easy web application for general purpose home automation. This is my personal lab.
+A simple and easy web application for general purpose home automation and media center. This is my personal lab.
 
 ## Main targets
 1. Handle web application authentication (features are provided only to authenticated user)
@@ -25,6 +25,10 @@ A simple and easy web application for general purpose home automation. This is m
   - Public IP address
   - Port forwarding enabled to reach the Raspberry PI via port 443 (no other port forwarding)
   - UPNP disabled
+  - One old 160 GB hard disk attached to a USB port
+    - the content is shared as a NAS
+    - it contains only music files
+    - it can be accessed by Kodi
 - Website **domain name** registered for free at http://www.freenom.com/
 - **HTTPS enabled** for free with https://letsencrypt.org/
 - Windows 10 with Internet Explorer 11 configured in this way (otherwise it's not possible to reach the camera IP address):
