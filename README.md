@@ -1,11 +1,13 @@
-# RaspiHome
-A simple and easy web application for home automation
+# RaspiHomeLab
+A simple and easy web application for home automation.
 
-a) handle the features prived by DLink DCS-932L IP camera
-  - show current picture
-  - shot list of pictures created by motion detection
-  - change settings
+Main targets:
+1. handle the features provided by DLink DCS-932L IP camera
+  * show current picture
+  * shot list of pictures created by motion detection
+  * change settings
+1. handle theft protection system (Olympia Protect 9061)
+1. handle themperature sensor (Oregon Scientific EW 93)
 
-b) handle theft protection system
-
-c) handle themperature sensor
+System setup:
+* 
