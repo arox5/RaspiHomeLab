@@ -1,26 +1,34 @@
 # RaspiHomeLab
-A simple and easy web application for home automation.
+A simple and easy web application for general purpose home automation. This is my personal lab.
 
-Main targets:
-1. handle the features provided by DLink DCS-932L IP camera
+## Main targets:
+1. Handle the features provided by DLink DCS-932L IP camera
    - show current picture
    - shot list of pictures created by motion detection
    - change settings
-1. handle theft protection system (Olympia Protect 9061)
-1. handle themperature sensor (Oregon Scientific EW 93)
+1. Handle theft protection system (Olympia Protect 9061)
+1. Handle themperature sensor (Oregon Scientific EW 93)
+1. Who knows...
 
-System setup:
+## System setup:
 - Raspberry PI 3 with Raspbian Stretch. Installed software:
   - Web server: Apache with PHP and Curl
   - FTP server: Pure-FTPd
   - Home theater: Kodi
 - DLink DCS-932L
-  - Firmware downgraded to 1.12.02 (this is required in order to have full control of the camera)
+  - Firmware downgraded to 1.12.02 (this is required in order to have full control of the camera via web requests)
   - Motion detection with upload via FTP to the Raspberry PI
 - Modem Fastgate (provided by italian ISP Fastweb)
   - Public IP address
   - Port forwarding enabled to reach the Raspberry PI via port 443
 - Website domain name registered for free at http://www.freenom.com/
 - HTTPS enabled for free with https://letsencrypt.org/
+- Windows 10 with Internet Explorer 11 configured in this way (otherwise it's not possible to reach the camera IP address):
+  - Open Internet Explorer
+  - Click on settings (Gear) option present on the top right corner
+  - Select Internet option
+  - Go to Security tab, click on green check mark and then Sites
+  - Add the camera IP address to the list, uncheck the check box related to "https" and then click OK/Close
+
 
 *in progress*
