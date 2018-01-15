@@ -13,7 +13,7 @@ A simple and easy web application for general purpose home automation and media 
 
 ## System setup
 - **Raspberry PI 3** with Raspbian Stretch. Installed software:
-  - Web server: Apache with PHP and Curl
+  - Web server: Apache with PHP
   - FTP server: Pure-FTPd
   - Home theater: Kodi
 - **DLink DCS-932L**
