@@ -31,6 +31,8 @@ A simple and easy web application for general purpose home automation and media 
     - it can be accessed by Kodi
 - Website **domain name** registered for free at http://www.freenom.com/
 - **HTTPS enabled** for free with https://letsencrypt.org/
+- **Monitoring** with https://www.pingdom.com/ free account
+- Exclude the web site from **Google search** using robots.txt and checking the result with https://www.google.com/webmasters/ 
 - Windows 10 with Internet Explorer 11 configured in this way (otherwise it's not possible to reach the camera IP address):
   - Open Internet Explorer
   - Click on settings (Gear) option present on the top right corner
