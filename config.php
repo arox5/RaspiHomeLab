@@ -12,6 +12,13 @@ if(ENVIRONMENT=='TST'){
 	define("PICFOLDER", "/home/pi/FTP/cam/");
 }
 
+$camurl = '';
+$camport = '';
+$camusr = '';
+$campwd = '';
+
+$google_site_verification = '';
+
 if(isset($local_cfg_is_set)){
 	//settings taken from file config_local.php (this file is not available in github)
 	$userinfo = $local_userinfo;
@@ -20,6 +27,8 @@ if(isset($local_cfg_is_set)){
 	$camport = $local_camport;
 	$camusr = $local_camusr;
 	$campwd = $local_campwd;
+
+	$google_site_verification = $local_google_site_verification;
 
 	define("CAM_LAST_PIC_URL", "http://" . $camurl . ":" . $camport . "/image/jpeg.cgi");
 	define("CAM_URL", "http://" . $camusr . ":" . $campwd . "@" . $camurl . ":" . $camport . "/");	

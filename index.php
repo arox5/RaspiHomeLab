@@ -40,13 +40,20 @@ if(isset($_SESSION['isloggedin'])) {
 	$isloggedin = $_SESSION['isloggedin'];
 }
 ?>
+<!doctype html>
 <html>
 <head>
-<link rel="stylesheet" rev="stylesheet" href="style.css" type="text/css">
-<title>Lab5</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="google-site-verification" content="XpGpZSCzs2HuMlW7PwniP9rXhva7fQSKjpPq6abuXLY" />
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="google-site-verification" content="<?php echo $google_site_verification ?>" />
+
+	<title>Lab5</title>
+
+    <!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
+/*
 body {
     background-color: white;
 }
@@ -54,6 +61,7 @@ body {
 table, th, td {
    border: 1px solid black;
 }
+*/
 
 table {
     width: 95%;
@@ -70,7 +78,6 @@ table {
 	/* height: 100px; */
 	margin: 5px 7px;
 }
-
 </style>
 </head>
 <body>
