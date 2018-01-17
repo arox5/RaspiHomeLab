@@ -33,12 +33,16 @@ A simple and easy web application for general purpose home automation and media 
 - **HTTPS enabled** for free with https://letsencrypt.org/
 - **Monitoring** with https://www.pingdom.com/ free account
 - Exclude the web site from **Google search** using robots.txt and checking the result with https://www.google.com/webmasters/ 
-- Windows 10 with Internet Explorer 11 configured in this way (otherwise it's not possible to reach the camera IP address):
+
+## Development environment
+- **Apache Web server with PHP** provied by https://www.uwamp.com/
+- Windows 10 with **Internet Explorer 11** configured in this way (otherwise it's not possible to reach the camera IP address):
   - Open Internet Explorer
   - Click on settings (Gear) option present on the top right corner
   - Select Internet option
   - Go to Security tab, click on green check mark and then Sites
   - Add the camera IP address to the list, uncheck the check box related to "https" and then click OK/Close
+- **Visual Studio Code** for coding and github access
 
 
 *in progress*
