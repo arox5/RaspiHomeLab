@@ -2,7 +2,8 @@
 A simple and easy web application for general purpose home automation and media center. This is my personal lab.
 
 ## Main targets
-1. Handle web application authentication (features are provided only to authenticated user)
+1. Build a responsive web application using Bootstrap
+1. Handle authentication (features are provided only to authenticated user)
 1. Handle the features provided by DLink DCS-932L IP camera
    - show current picture
    - shot list of pictures created by motion detection
