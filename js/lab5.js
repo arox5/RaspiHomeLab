@@ -12,6 +12,9 @@ function loadSection(section) {
     };
     xhttp.open("GET", "include/" + section + ".php", true);
     xhttp.send();
+
+    //force the nav bar collapse
+    $(".navbar-collapse").collapse('hide');
 }
 
 //used by camlastpic.php
