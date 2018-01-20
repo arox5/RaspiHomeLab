@@ -1,13 +1,10 @@
 <?php
-require 'include/config.php';
+require 'include/session.php';
 
-session_start();
-
-$loginresult='';
+/*
 $action='';
-$isloggedin = false;
 
-if(isset($_GET['action'])) {
+if(isset($GET['action'])) {
 	$action = $_GET['action'];
 } elseif(isset($_POST['action'])) {
 	$action = $_POST['action'];
@@ -17,28 +14,10 @@ if($action == 'logout') {
 	$_SESSION['isloggedin'] = false;
 	header('Location: ' . $_SERVER['PHP_SELF']);
 }
+*/
 
-if(isset($_POST['username'])) {
-	//default behavior: not logged in
-	$loginresult = 'Invalid Login';
-	$_SESSION['isloggedin'] = false;
-
-	if(isset($userinfo[$_POST['username']])) {
-		if($userinfo[$_POST['username']] == $_POST['password']) {
-			$_SESSION['isloggedin'] = true;
-			$loginresult = '';
-		}
-	}
-
-	//log the wrong input username and password
-	if($_SESSION['isloggedin'] == false) {
-		error_log($_SERVER['REMOTE_ADDR'] . " Username=" . $_POST['username'] . " Password=" . $_POST['password']);
-	}
-}
-
-if(isset($_SESSION['isloggedin'])) {
-	$isloggedin = $_SESSION['isloggedin'];
-}
+//echo isset($GET['action'] . '<br />';
+//echo $_GET['action'] . '<br />';
 ?>
 <!doctype html>
 <html>
@@ -76,17 +55,17 @@ if(isset($_SESSION['isloggedin'])) {
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
 				-->
-				<li class="nav-item <?php echo ($action=='camlastpic'? 'active' : '') ?>">
-					<a class="nav-link" href="?action=camlastpic">Current picture</a>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="loadSection('camlastpic')">Current picture</a>
 				</li>
-				<li class="nav-item <?php echo ($action=='campiclist'? 'active' : '') ?>">
-					<a class="nav-link" href="?action=campiclist">Last pictures</a>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="loadSection('campiclist')">Last pictures</a>
 				</li>
-				<li class="nav-item <?php echo ($action=='camsetting'? 'active' : '') ?>">
-					<a class="nav-link" href="?action=camsetting">Camera settings</a>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="loadSection('camsetting')">Camera settings</a>
 				</li>
-				<li class="nav-item <?php echo ($action=='theftprot'? 'active' : '') ?>">
-					<a class="nav-link disabled" href="#">Theft Protection</a>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="loadSection('theftprot')">Theft Protection</a>
 				</li>
 				<!--
 				<li class="nav-item dropdown">
@@ -99,7 +78,7 @@ if(isset($_SESSION['isloggedin'])) {
 				</li>
 				-->
 			</ul>
-			<a class="btn btn-outline-danger" href="?action=logout" role="button">Logout</a>
+			<a class="btn btn-outline-danger" href="?action=logout" role="button">Log out</a>
 		</div>
 
 		<!-- Bootstrap core JavaScript
@@ -107,41 +86,27 @@ if(isset($_SESSION['isloggedin'])) {
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="js/jquery-3.2.1.slim.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/lab5.js"></script>
 
 	<?php endif //if($isloggedin) ?>
 </nav>
 
 <main role="main" class="container">
-	<div class="starter-template">
+	<div class="starter-template" id="starter-template">
 		<?php if($isloggedin == false): ?>
 			<!-- Login form -->
 			<form class="form-signin" name="login" method="post">
-				<h2 class="form-signin-heading">Please login</h2>
+				<h2 class="form-signin-heading">Please log in</h2>
 				<!-- <label for="username" class="sr-only">Email address</label> -->
 				<input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
 				<!-- <label for="password" class="sr-only">Password</label> -->
 				<input type="password" name="password" class="form-control" placeholder="Password" required>
-				<button class="btn btn-dark btn-lg btn-primary btn-block" type="submit">Login</button>
+				<button class="btn btn-dark btn-lg btn-primary btn-block" type="submit">Log in</button>
 			</form>
 		<?php else: ?>
 			<!-- Content for authenticated section -->
-			<?php switch ($action):
-				case 'camlastpic': ?>
-					<?php require 'include/camlastpic.php'; ?>
-					<?php break; ?>
-				<?php case 'campiclist': ?>
-					<?php require 'include/campiclist.php'; ?>
-					<?php break; ?>
-				<?php case 'camsetting': ?>
-					<?php require 'include/camsetting.php'; ?>
-					<?php break; ?>
-				<?php case 'theftprot': ?>
-					to be done
-					<?php break; ?>
-				<?php default: ?>
-					<h1>Welcome to <?php echo $sitename ?></h1>
-					<p class="lead">Select an action in the above menu</p>
-			<?php endswitch ?>
+			<h1>Welcome to <?php echo $sitename ?></h1>
+			<p class="lead">Select an action in the above menu</p>
 		<?php endif //if($isloggedin == false) ?>
 	</div>
 </main><!-- /.container -->

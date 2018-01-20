@@ -101,7 +101,7 @@ table {
 			<a href="?action=logout">Logout</a>
 		<?php else: ?>
 			<?php echo $loginresult ?>
-			<form name="login" action="index.php" method="post">
+			<form name="login" action="index2.php" method="post">
 				Username: <input type="text" name="username" value="" /><br />
 				Password: <input type="password" name="password" value="" /><br />
 				<input type="submit" name="submit" value="Submit" />
@@ -158,7 +158,7 @@ table {
 						}
 					}, 3000);
 					</script>
-					<form name="camlastpic" id="camlastpic" action="index.php" method="post">
+					<form name="camlastpic" id="camlastpic" action="index2.php" method="post">
 					<input type="hidden" name="action" id="action" value="camlastpic" />
 					Auto refresh every 3 seconds <input type="checkbox" name="chkautorefresh" id="chkautorefresh" onclick="setAutoRefresh()" ' . ($chkautorefresh=='on'? 'checked' : '') . ' /> <br /><br />
 					</form>
@@ -231,7 +231,7 @@ table {
 						document.getElementById("formcampiclist").submit();
 					}
 					</script>
-					<form name="formcampiclist" id="formcampiclist" action="index.php" method="post">
+					<form name="formcampiclist" id="formcampiclist" action="index2.php" method="post">
 					<input type="hidden" name="action" id="action" value="campiclist" />
 					<input type="hidden" name="goto" id="goto" value="" />
 					<input type="hidden" name="curpage" id="curpage" value="' . $curpage . '" />
@@ -364,7 +364,7 @@ table {
 							document.getElementById("formcamsetting").submit();
 						}
 						</script>
-						<form name="formcamsetting" id="formcamsetting" action="index.php" method="post">
+						<form name="formcamsetting" id="formcamsetting" action="index2.php" method="post">
 						<input type="hidden" name="action" id="action" value="camsetting" />
 						<input type="hidden" name="camsettingcfg" id="camsettingcfg" value="' . $camsettingcfg . '" />
 						</form>';
