@@ -6,7 +6,7 @@ date_default_timezone_set('Europe/Rome');
 
 if(ENVIRONMENT=='TST'){
 	//windows dev environment
-	define("PICFOLDER", "../cam_files/");
+	define("PICFOLDER", "../../cam_files/");
 } else {
 	//raspberry
 	define("PICFOLDER", "/home/pi/FTP/cam/");

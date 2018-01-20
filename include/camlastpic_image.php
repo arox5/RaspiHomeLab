@@ -26,7 +26,7 @@ if(isset($isloggedin) && $isloggedin) {
     header("Content-type: image/png");
     imagepng($source);
     //release memory
-    imagedestroy($imageData);
+    imagedestroy($source);
 
 } else {
     //not authenticated, redirect to home page
