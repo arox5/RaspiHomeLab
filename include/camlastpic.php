@@ -2,19 +2,14 @@
 <?php if(isset($isloggedin) && $isloggedin): ?>
     <div>
         Auto refresh every 3 seconds 
-
+        &nbsp;&nbsp;
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary ">
-                <input type="radio" name="options" id="setOn" autocomplete="off" onclick="setAutoRefreshImage('on')">On
+                <input type="radio" name="options" id="setOn" autocomplete="off" onchange="setAutoRefreshImage()">On
             </label>
             <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="setOff" autocomplete="off" checked onclick="setAutoRefreshImage('off')"> Off
+                <input type="radio" name="options" id="setOff" autocomplete="off" checked onchange="setAutoRefreshImage()"> Off
             </label>
-        </div>
-
-        <div class="btn-group" role="group" >
-            <button type="button" class="btn btn-dark" onclick="setAutoRefreshImage('on')">On</button>
-            <button type="button" class="btn btn-secondary" onclick="setAutoRefreshImage('off')">Off</button>
         </div>
         &nbsp;&nbsp;&nbsp;
         <button type="button" class="btn btn-secondary" onclick="refreshImage()">Refresh</button>
