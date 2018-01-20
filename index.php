@@ -116,9 +116,7 @@ if(isset($_SESSION['isloggedin'])) {
 		<?php if($isloggedin == false): ?>
 			<!-- Login form -->
 			<form class="form-signin" name="login" method="post">
-				<!--
-				<h2 class="form-signin-heading">Sign in</h2>
-				-->
+				<h2 class="form-signin-heading">Please login</h2>
 				<!-- <label for="username" class="sr-only">Email address</label> -->
 				<input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
 				<!-- <label for="password" class="sr-only">Password</label> -->

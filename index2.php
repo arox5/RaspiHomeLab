@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'include/config.php';
 
 session_start();
 
@@ -355,7 +355,7 @@ table {
 						//echo '<div>response: ' . $response . '</div>';
 					}
 				
-					require('simple_html_dom.php');
+					require('include/simple_html_dom.php');
 
 					echo 
 						'<script>

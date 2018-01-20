@@ -1,5 +1,5 @@
 <?php
-require 'config_local.php';
+require 'config_local.php';	// this is not committed to Github
 require 'config_env.php';
 
 date_default_timezone_set('Europe/Rome');
