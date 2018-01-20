@@ -7,7 +7,7 @@ function loadSection(section) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("starter-template").innerHTML = this.responseText;
+        $("#starter-template").html(this.responseText);
       }
     };
     xhttp.open("GET", "include/" + section + ".php", true);
@@ -20,7 +20,7 @@ function loadSection(section) {
 //used by camlastpic.php
 function setAutoRefreshImage() {
     intoggle = 'off';
-    if(document.getElementById("setOn").checked) {
+    if($("#setOn").is(":checked")) {
         intoggle = 'on';
     }
     //console.log('toogle: ' + intoggle);
@@ -39,5 +39,5 @@ function setAutoRefreshImage() {
 
 function refreshImage() {
     //console.log('refresh');
-    document.getElementById("lastimage").src = "include/camlastpic_image.php";
+    $("#lastimage").attr("src", "include/camlastpic_image.php");
 }
