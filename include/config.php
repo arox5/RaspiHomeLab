@@ -19,6 +19,8 @@ $campwd = '';
 
 $google_site_verification = '';
 
+$sitename = 'Dummy';
+
 if(isset($local_cfg_is_set)){
 	//settings taken from file config_local.php (this file is not available in github)
 	$userinfo = $local_userinfo;
@@ -29,6 +31,8 @@ if(isset($local_cfg_is_set)){
 	$campwd = $local_campwd;
 
 	$google_site_verification = $local_google_site_verification;
+
+	$sitename = $local_sitename;
 
 	define("CAM_LAST_PIC_URL", "http://" . $camurl . ":" . $camport . "/image/jpeg.cgi");
 	define("CAM_URL", "http://" . $camusr . ":" . $campwd . "@" . $camurl . ":" . $camport . "/");	
