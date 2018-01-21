@@ -2,7 +2,7 @@
 A simple and easy web application for general purpose home automation and media center. This is my personal lab.
 
 ## Main targets
-- [ ] Build a responsive web application using Bootstrap
+- [ ] Build a modern and responsive web application using Bootstrap 4 and jQuery 3.2.1
 - [x] Handle authentication (features are provided only to authenticated user)
 - [ ] Handle the features provided by DLink DCS-932L IP camera
    - [x] show current picture
