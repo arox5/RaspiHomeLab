@@ -4,7 +4,7 @@ A simple and easy web application for general purpose home automation and media 
 ## Main targets
 - [ ] Build a responsive web application using Bootstrap
 - [x] Handle authentication (features are provided only to authenticated user)
-- Handle the features provided by DLink DCS-932L IP camera
+- [ ] Handle the features provided by DLink DCS-932L IP camera
    - [x] show current picture
    - [ ] shot list of pictures created by motion detection
    - [ ] change settings
@@ -35,6 +35,7 @@ Who knows...
 - **HTTPS enabled** for free with https://letsencrypt.org/
 - **Monitoring** with https://www.pingdom.com/ free account
 - Exclude the web site from **Google search** using robots.txt and checking the result with https://www.google.com/webmasters/ 
+- **Penetration test** with https://pentest-tools.com/home
 
 ## Development environment
 - Windows 10 with **Internet Explorer 11** configured in this way (otherwise it's not possible to reach the camera IP address):
