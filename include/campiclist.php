@@ -1,10 +1,12 @@
-<?php
-require 'session.php';
+<?php require 'session.php' ?>
+<?php if(isset($isloggedin) && $isloggedin): ?>
+    --> camera pictures list / to be done
 
-if(isset($isloggedin) && $isloggedin) {
-    echo '--> camera pictures list / to be done';
-} else {
-    //not authenticated, redirect to home page
-    header('Location: ../');
-}
-?>
+
+
+<?php else: ?>
+    <?php
+        //not authenticated, redirect to home page
+        header('Location: ../');
+    ?>
+<?php endif ?>
