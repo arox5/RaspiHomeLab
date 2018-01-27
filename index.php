@@ -10,7 +10,7 @@
 	<title>Lab5</title>
     <!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for the starter template -->
     <link href="css/starter-template.css" rel="stylesheet">
     </head>
 <body>
