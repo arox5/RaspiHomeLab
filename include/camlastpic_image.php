@@ -1,5 +1,5 @@
 <?php require 'session.php' ?>
-<?php
+<?php 
 if(isset($isloggedin) && $isloggedin) {
     /*
     $imageDataEncoded = base64_encode(file_get_contents(CAM_LAST_PIC_URL));
