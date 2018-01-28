@@ -28,16 +28,16 @@
 			</li>
 			-->
 			<li class="nav-item">
-				<a class="nav-link" href="#" onclick="loadSection('camlastpic')">Current picture</a>
+				<a class="nav-link" id="menu-camlastpic" href="#">Current picture</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" onclick="loadSection('campiclist')">Last pictures</a>
+				<a class="nav-link" id="menu-campiclist" href="#">Last pictures</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" onclick="loadSection('camsetting')">Camera settings</a>
+				<a class="nav-link" id="menu-camsetting" href="#">Camera settings</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#" onclick="loadSection('theftprot')">Theft Protection</a>
+				<a class="nav-link" id="menu-theftprot" href="#">Theft Protection</a>
 			</li>
 			<!--
 			<li class="nav-item dropdown">
@@ -59,6 +59,9 @@
 	<script src="js/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/lab5.js"></script>
+	<script>
+		attachEventsToMenu();
+	</script>
 </nav>
 
 <main role="main" class="container">

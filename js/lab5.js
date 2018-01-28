@@ -3,6 +3,27 @@
 //used by index.php
 var toAutoRefresh;
 
+//used by index.php
+function attachEventsToMenu() {
+    $(".navbar-nav #menu-camlastpic").click(function() {
+        //take last snapshot
+        loadSection('camlastpic');
+    });
+    $(".navbar-nav #menu-campiclist").click(function() {
+        //take last snapshot
+        loadSection('campiclist');
+    });
+    $(".navbar-nav #menu-camsetting").click(function() {
+        //take last snapshot
+        loadSection('camsetting');
+    });
+    $(".navbar-nav #menu-theftprot").click(function() {
+        //take last snapshot
+        loadSection('theftprot');
+    });
+}
+
+//main navigation
 function loadSection(section) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -18,6 +39,21 @@ function loadSection(section) {
 }
 
 //used by camlastpic.php
+function attachEventsToCamLastPic() {
+    $("#nav-last-pic #refresh-img").click(function() {
+        //take last snapshot
+        refreshImage();
+    });
+    $("#nav-last-pic #setOn").change(function() {
+        //take last snapshot
+        setAutoRefreshImage();
+    });
+    $("#nav-last-pic #setOff").change(function() {
+        //take last snapshot
+        setAutoRefreshImage();
+    });
+}
+
 function setAutoRefreshImage() {
     intoggle = 'off';
     if($("#setOn").is(":checked")) {
