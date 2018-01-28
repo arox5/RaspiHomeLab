@@ -103,11 +103,12 @@ function attachEventsToCamPicList() {
 }
 
 function goToPage(goto) {
-    curpage = $("#nav-form #curpage").text();
-    picsperpage = $("#nav-form #picsperpage").val();
-    totalpages = $("#nav-form #totalpages").text();
-    if (totalpages == '?') {
+    curpage = parseInt($("#nav-form #curpage").text());
+    picsperpage = parseInt($("#nav-form #picsperpage").val());
+    if ($("#nav-form #totalpages").text() == '?') {
         totalpages = 10;
+    } else {
+        totalpages = parseInt($("#nav-form #totalpages").text());
     }
 
     //calculate page to be loaded
