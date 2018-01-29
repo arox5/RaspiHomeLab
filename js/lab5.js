@@ -191,3 +191,31 @@ function goToPage(goto) {
     //$("#nav-form #spinner").prepend('<img src="spinner.gif" width="80" />');
     $("#nav-form #spinner").text(' (loading...) ');
 }
+
+//used by camsetting.php
+function attachEventsToCamSetting() {
+    $("#cam-setting-mot-det #set-mot-det-on").change(function() {
+        changeCamSetting('setMotionOn');
+    });
+    $("#cam-setting-mot-det #set-mot-det-off").change(function() {
+        changeCamSetting('setMotionOff');
+    });
+    $("#cam-setting-day-night #set-day-night-auto").change(function() {
+        changeCamSetting('setDateNightAuto');
+    });
+    $("#cam-setting-day-night #set-day-night-day").change(function() {
+        changeCamSetting('setDateNightAlwaysDayMode');
+    });
+}
+
+function changeCamSetting(configName) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        $("#starter-template").html(this.responseText);
+      }
+    };
+    xhttp.open("GET", "include/camsetting.php"
+        + "?camsettingcfg=" + configName, true);
+    xhttp.send();
+}
