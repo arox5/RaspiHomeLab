@@ -10,7 +10,7 @@ A simple and easy web application for general purpose home automation and media 
    - [*] change settings
      - [*] motion detection on/off
      - [*] day night auto/off
-- ([) ) Handle theft protection system (Olympia Protect 9061)
+- ( ) Handle theft protection system (Olympia Protect 9061)
 - [ ] Handle themperature sensor (Oregon Scientific EW 93)
 
 Who knows...
