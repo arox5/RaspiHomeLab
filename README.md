@@ -2,18 +2,17 @@
 A simple and easy web application for general purpose home automation and media center. This is my personal lab.
 
 ## Main targets
-- (*) Build a modern and responsive web application using Bootstrap 4 and jQuery 3.2.1
-- (X) Handle authentication (features are provided only to authenticated user)
+- (x) Build a modern and responsive web application using Bootstrap 4 and jQuery 3.2.1
+- (x) Handle authentication (features are provided only to authenticated user)
 - (x) Handle the features provided by DLink DCS-932L IP camera
-   - [*] show current picture
-   - [*] shot list of pictures created by motion detection
-   - [*] change settings
-     - [*] motion detection on/off
-     - [*] day night auto/off
+   - (x) show current picture
+   - (x) shot list of pictures created by motion detection
+   - (x) change settings
+     - (x) motion detection on/off
+     - (x) day night auto/off
 - ( ) Handle theft protection system (Olympia Protect 9061)
-- [ ] Handle themperature sensor (Oregon Scientific EW 93)
-
-Who knows...
+- ( ) Handle themperature sensor (Oregon Scientific EW 93)
+- ( ) Who knows...
 
 ## System setup
 - **Raspberry PI 3** with Raspbian Stretch. Installed software:
