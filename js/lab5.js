@@ -27,9 +27,14 @@ function attachEventsToMenu() {
 function loadSection(section) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        $("#starter-template").html(this.responseText);
-      }
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseURL.indexOf('login.php') > 0) {
+                //a redirect to login.php is detected, this means that the session is expired
+                document.location.href = '/';
+            } else {
+                $("#starter-template").html(this.responseText);
+            }
+        }
     };
     xhttp.open("GET", "include/" + section + ".php", true);
     xhttp.send();
@@ -169,17 +174,21 @@ function goToPage(goto) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
+        if(this.responseURL.indexOf('login.php') > 0) {
+            //a redirect to login.php is detected, this means that the session is expired
+            document.location.href = '/';
+        } else {
+            //show the content
+            $("#piclistgallery").html(this.responseText);
 
-        //show the content
-        $("#piclistgallery").html(this.responseText);
+            //take real number of pages from the output
+            //$("#totalpages").val($("#totalpagesout").val());
+            $("#nav-form #totalpages").text($("#form-out #totalpagesout").val());
+            $("#nav-form #totalpictures").text($("#form-out #totalpicturesout").val());
 
-        //take real number of pages from the output
-        //$("#totalpages").val($("#totalpagesout").val());
-        $("#nav-form #totalpages").text($("#form-out #totalpagesout").val());
-        $("#nav-form #totalpictures").text($("#form-out #totalpicturesout").val());
-
-        //reset the spinner
-        $("#nav-form #spinner").text('');
+            //reset the spinner
+            $("#nav-form #spinner").text('');
+        }
       }
     };
     xhttp.open("GET", "include/campiclist_image.php"
@@ -212,7 +221,12 @@ function changeCamSetting(configName) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        $("#starter-template").html(this.responseText);
+        if(this.responseURL.indexOf('login.php') > 0) {
+            //a redirect to login.php is detected, this means that the session is expired
+            document.location.href = '/';
+        } else {
+            $("#starter-template").html(this.responseText);
+        }
       }
     };
     xhttp.open("GET", "include/camsetting.php"
