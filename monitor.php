@@ -125,7 +125,16 @@ if ($tagfound) {
                 <?php echo $camsett ?>
             </div>
         </div>
-	</div>
+        <p></p>
+        <div class="row">
+            <div class="col">
+                Current time on server
+            </div>
+            <div class="col">
+                <?php echo date('d/m/Y H:i:s'); ?>
+            </div>
+        </div>
+    </div>
 </main><!-- /.container -->
 
 </body>
