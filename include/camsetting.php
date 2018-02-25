@@ -1,6 +1,7 @@
-<?php require 'session.php' ?>
-<?php require 'simple_html_dom.php' ?>
 <?php
+require 'session.php';
+require 'simple_html_dom.php';
+require 'util.php';
 
 /* ----------------------------------------------------------------------------------  */
 // write camera settings
@@ -31,18 +32,7 @@ switch($camsettingcfg) {
 if ($url != '') {
     //apply defined settings
     //echo 'url: ' . $url;
-
-    $ch = curl_init($url);
-    $http_headers = array(
-        'User-Agent: Junk', // Any User-Agent will do here
-    );
-    curl_setopt($ch, CURLOPT_HEADER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    
-    $response = curl_exec($ch);
-    curl_close($ch);
-
+    $response = call_url($url);
     //echo '<div>response: ' . $response . '</div>';
 }
 // end write camera settings
@@ -51,17 +41,7 @@ if ($url != '') {
 /* ----------------------------------------------------------------------------------  */
 // read motion detection start
 $url = CAM_URL . 'motion.htm';
-
-$ch = curl_init($url);
-$http_headers = array(
-    'User-Agent: Junk', // Any User-Agent will do here
-);
-curl_setopt($ch, CURLOPT_HEADER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$response = curl_exec($ch);
-curl_close($ch);
+$response = call_url($url);
 
 //echo '<div>response: ' . $response . '</div>';
 
@@ -83,17 +63,7 @@ foreach($dom->find('input') as $element) {
 /* ----------------------------------------------------------------------------------  */
 // read day/night mode start
 $url = CAM_URL . 'night.htm';
-
-$ch = curl_init($url);
-$http_headers = array(
-    'User-Agent: Junk', // Any User-Agent will do here
-);
-curl_setopt($ch, CURLOPT_HEADER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$response = curl_exec($ch);
-curl_close($ch);
+$response = call_url($url);
 
 //echo '<div>response: ' . $response . '</div>';
 

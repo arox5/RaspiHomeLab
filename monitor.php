@@ -1,6 +1,7 @@
 <?php 
 require 'include/config.php';
 require 'include/simple_html_dom.php';
+require 'include/util.php';
 
 /*  ------------------------------------------------------------------
     take last screenshot / see code in camlastpic_image.php / start
@@ -43,17 +44,7 @@ if ($imagefound) {
     ------------------------------------------------------------------ */
 $camsett = '...';
 $url = CAM_URL . 'motion.htm';
-
-$ch = curl_init($url);
-$http_headers = array(
-    'User-Agent: Junk', // Any User-Agent will do here
-);
-curl_setopt($ch, CURLOPT_HEADER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$response = curl_exec($ch);
-curl_close($ch);
+$response = call_url($url);
 
 // Create a DOM object
 $dom = new simple_html_dom();
