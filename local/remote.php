@@ -31,18 +31,31 @@ switch ($action) {
 }
 
 if ($ledUpdate) {
-    $url = CAM_URL . 'setSystemControl?LEDControl=';
+    //swith on/off the led, the camera motion and the day/night
+    $url_led = CAM_URL . 'setSystemControl?LEDControl=';
+    $url_motion = CAM_URL . 'setSystemMotion?MotionDetectionEnable=';
+    $url_daynight = CAM_URL . 'setDayNightMode?DayNightMode=';
+
     if ($action == 'on') {
-        $url = $url . '0';
+        $url_led = $url_led . '0';
+        $url_motion = $url_motion . '1';
+        $url_daynight = $url_daynight . '0';
     } else {
-        $url = $url . '1';
+        $url_led = $url_led . '1';
+        $url_motion = $url_motion . '0';
+        $url_daynight = $url_daynight . '2';
     }
-    $url = $url . '&ReplyErrorPage=errradv.htm&ReplySuccessPage=advanced.htm&ConfigSystemControl=Apply';
+
+    $url_led = $url_led . '&ReplyErrorPage=errradv.htm&ReplySuccessPage=advanced.htm&ConfigSystemControl=Apply';
+    $url_motion = $url_motion . '&ReplyErrorPage=motion.htm&ReplySuccessPage=motion.htm&ConfigSystemMotion=Save';
+    $url_daynight = $url_daynight . '&ReplyErrorPage=errrnght.htm&ReplySuccessPage=night.htm&ConfigDayNightMode=Save';
     
-    //echo 'url:' . $url;
-    
+    //echo 'url_led:' . $url_led;
+
     // setting update
-    call_url($url);
+    call_url($url_led);
+    call_url($url_motion);
+    call_url($url_daynight);
 }
 
 /* ----------------------------------------------------------------------------------  */
