@@ -1,6 +1,7 @@
 <?php 
 require '../include/config.php';
 require '../include/simple_html_dom.php';
+require '../include/util.php';
 
 $token = '';
 if (isset($_GET['token'])) {
@@ -41,32 +42,13 @@ if ($ledUpdate) {
     //echo 'url:' . $url;
     
     // setting update
-    $ch = curl_init($url);
-    $http_headers = array(
-        'User-Agent: Junk', // Any User-Agent will do here
-    );
-    curl_setopt($ch, CURLOPT_HEADER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    
-    $response = curl_exec($ch);
-    curl_close($ch);
+    call_url($url);
 }
 
 /* ----------------------------------------------------------------------------------  */
 // read advanced mode start
 $url = CAM_URL . 'advanced.htm';
-
-$ch = curl_init($url);
-$http_headers = array(
-    'User-Agent: Junk', // Any User-Agent will do here
-);
-curl_setopt($ch, CURLOPT_HEADER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$response = curl_exec($ch);
-curl_close($ch);
+$response = call_url($url);
 
 //echo '<div>response: ' . $response . '</div>';
 
