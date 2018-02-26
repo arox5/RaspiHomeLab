@@ -12,6 +12,7 @@ A simple and easy web application for general purpose home automation and media 
      - (x) day night auto/off
 - ( ) Handle theft protection system (Olympia Protect 9061)
 - ( ) Handle themperature sensor (Oregon Scientific EW 93)
+- (x) Automatically enable/disable motion detection and day/night settings when a bluetooth device is in range
 - ( ) Who knows...
 
 ## System setup
@@ -19,6 +20,7 @@ A simple and easy web application for general purpose home automation and media 
   - Web server: Apache with PHP
   - FTP server: Pure-FTPd
   - Home theater: Kodi
+  - Python
 - **DLink DCS-932L**
   - Firmware downgraded to 1.12.02. Remarks: 
     - This is required in order to have full control of the camera via web requests
@@ -48,5 +50,7 @@ A simple and easy web application for general purpose home automation and media 
 - **Visual Studio Code** for coding and GitHub access
 - **Apache Web server with PHP** provided by https://www.uwamp.com/
 
+## Python script
+- File btcheck.py contains a script that controls the presence of specific bluetooth devices and, when found, disable some camera features. If bluetooth devices are not in range, the camera features are automatically enabled. This part contains code taken from https://github.com/dagar/bluetooth-proximity/blob/master/proximity_dagar.py.
 
 *in progress*
