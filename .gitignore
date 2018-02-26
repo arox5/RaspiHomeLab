@@ -1,2 +1,3 @@
 include/config_local.php
 VisualStudioCode.code-workspace
+python/btcheck_cfg.py
